@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <nav>
       <Link href={"/"}>Todo List</Link>
-      <Link></Link>
+      <Link href={""}></Link>
     </nav>
   );
 }
