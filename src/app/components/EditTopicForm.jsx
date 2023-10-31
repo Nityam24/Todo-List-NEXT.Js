@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddTopic() {
+function EditTopicForm() {
   return (
     <form className="flex flex-col gap-3">
       <input
@@ -16,10 +16,10 @@ function AddTopic() {
       />
 
       <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit ">
-        Add Topic
+        Update Topic
       </button>
     </form>
   );
 }
 
-export default AddTopic;
+export default EditTopicForm;
