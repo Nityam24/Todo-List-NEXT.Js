@@ -1,4 +1,8 @@
-##TODO-LIST-NEXT
+## TODO-LIST-NEXT
+
+This Project demonstrate Latest NEXT.js version 13.4 with MongoDB.
+
+We use NEXT.js as full stack framework and utilize it's api routes functionality.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
