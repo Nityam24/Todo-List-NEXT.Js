@@ -16,7 +16,7 @@ function EditTopicForm() {
       />
 
       <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit ">
-        Update
+        Update Topic
       </button>
     </form>
   );
