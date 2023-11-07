@@ -1,4 +1,4 @@
-import EditTopicForm from "@/app/components/EditTopicForm";
+import EditTopicForm from "@/components/EditTopicForm";
 import React from "react";
 
 function EditTopic() {
