@@ -8,3 +8,9 @@ export async function POST(request) {
   await Topic.create({ title, description });
   return NextResponse.json({ message: "Topic Created" }, { status: 201 });
 }
+
+export async function GET() {
+  await connectMonogoDB();
+  const topics = await topic.find();
+  return NextResponse.json({ topics });
+}
