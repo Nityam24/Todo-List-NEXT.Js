@@ -14,3 +14,10 @@ export async function GET() {
   const topics = await topic.find();
   return NextResponse.json({ topics });
 }
+
+export async function DELETE() {
+  const id = request.NextUrl.searchParam.get("id");
+  await connectMonogoDB();
+  await Topic.findByIdAndDelete(id);
+  return NextResponse.json({ message: "Topic deleted" }, { status: 200 });
+}
