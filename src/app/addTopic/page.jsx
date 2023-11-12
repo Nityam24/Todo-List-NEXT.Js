@@ -1,6 +1,6 @@
 "use clent";
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 function AddTopic() {
@@ -39,6 +39,8 @@ function AddTopic() {
     <form className="flex flex-col gap-3">
       <input
         className="border border-slate-500 px-8 py-2"
+        onChange={(e) => setTitle(e.target.value)}
+        value={title}
         type="text"
         placeholder="Topic title"
       />
