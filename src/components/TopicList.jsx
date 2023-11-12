@@ -3,6 +3,18 @@ import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 
+const getTopics = async () => {
+  try {
+    await fetch("http://localhost:3000/api/topics", {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed loading topics:", error);
+    }
+  } catch (error) {}
+};
+
 function TopicList() {
   return (
     <>
