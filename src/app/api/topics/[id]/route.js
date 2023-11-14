@@ -1,5 +1,5 @@
 import connectMonogoDB from "@/lib/mongodb";
-import Topic from "@/models/topic";
+import Topic from "@/models/topics";
 import { NextResponse } from "next/server";
 export async function PUT(request, { params }) {
   const { id } = params;

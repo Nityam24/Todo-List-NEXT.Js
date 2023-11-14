@@ -46,7 +46,10 @@ function EditTopicForm({ id, title, description }) {
         placeholder="Topic Description"
       />
 
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit ">
+      <button
+        onClick={handleSubmit}
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit "
+      >
         Update Topic
       </button>
     </form>

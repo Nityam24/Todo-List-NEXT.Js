@@ -15,8 +15,8 @@ export async function GET() {
   return NextResponse.json({ topics });
 }
 
-export async function DELETE() {
-  const id = request.NextUrl.searchParam.get("id");
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
   await connectMonogoDB();
   await Topic.findByIdAndDelete(id);
   return NextResponse.json({ message: "Topic deleted" }, { status: 200 });
