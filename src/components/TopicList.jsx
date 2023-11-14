@@ -15,13 +15,14 @@ const getTopics = async () => {
   } catch (error) {}
 };
 
-function TopicList() {
+async function TopicList() {
+  const { topics } = await getTopics();
   return (
     <>
-      {TopicList.map(() => (
+      {topics.map(() => (
         <div className="p-4 border-size-300 my-3 flex justify-between gap-5 items-start">
           <div>
-            <h2 className="font-bold text-2xl">Topic Title</h2>
+            <h2 className="font-bold text-2xl">{t.title}</h2>
             <div>{t.description}</div>
           </div>
 
