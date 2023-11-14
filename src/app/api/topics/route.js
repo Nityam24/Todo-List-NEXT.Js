@@ -11,7 +11,7 @@ export async function POST(request) {
 
 export async function GET() {
   await connectMonogoDB();
-  const topics = await topic.find();
+  const topics = await Topic.find();
   return NextResponse.json({ topics });
 }
 

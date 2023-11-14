@@ -5,13 +5,14 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch("http://localhost:3000/api/topics", {
       cache: "no-store",
     });
 
     if (!res.ok) {
       throw new Error("Failed loading topics:", error);
     }
+    return res.json();
   } catch (error) {}
 };
 
@@ -19,7 +20,7 @@ async function TopicList() {
   const { topics } = await getTopics();
   return (
     <>
-      {topics.map(() => (
+      {topics.map((t) => (
         <div className="p-4 border-size-300 my-3 flex justify-between gap-5 items-start">
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
