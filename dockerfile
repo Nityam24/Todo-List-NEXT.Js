@@ -1,4 +1,4 @@
- FROM node:17-alpline
+ FROM node
     WORKDIR /app
     COPY . . 
     RUN npm install
