@@ -18,7 +18,7 @@ const getTopicById = async (id) => {
 
 async function EditTopic({ params }) {
   const { id } = params;
-  const { topic } = await getTopicById(id);
+  const topic = await getTopicById(id);
   const { title, description } = topic;
   // console.log("id:");
   return (
