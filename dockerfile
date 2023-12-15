@@ -1,1 +1,4 @@
-#This is for docker container build and run 
+ FROM node:17-alpline
+    WORKDIR /app
+    
+
