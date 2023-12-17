@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function NavBar() {
   return (
-    <nav className="flex justify-between items-center bg-slate-800 px-8 py-3">
+    <nav className="flex justify-between items-center bg-blue-900 px-8 py-3">
       <Link className="text-white font-bold" href={"/"}>
         Todo List
       </Link>
