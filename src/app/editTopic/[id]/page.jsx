@@ -20,7 +20,7 @@ async function EditTopic({ params }) {
   const { id } = params;
   const topic = await getTopicById(id);
   const { title, description } = topic;
-  // console.log("id:");
+
   return (
     <div>
       <EditTopicForm id={id} title={title} description={description} />
