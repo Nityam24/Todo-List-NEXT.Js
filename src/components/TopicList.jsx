@@ -3,9 +3,11 @@ import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 
+const BASE_URL = "http://localhost:3000/api/topics";
+
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const res = await fetch(BASE_URL, {
       cache: "no-store",
     });
 
@@ -17,6 +19,7 @@ const getTopics = async () => {
 };
 
 async function TopicList() {
+  if (typeof window === "undefined") return null; //this most important line for nextjs build
   const { topics } = await getTopics(); // { topics: [] }
   return (
     <>
