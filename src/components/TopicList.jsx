@@ -19,7 +19,7 @@ const getTopics = async () => {
 };
 
 async function TopicList() {
-  if (typeof window === "undefined") return null; //this most important line for nextjs build
+  if (typeof window !== "undefined") return null; //this most important line for nextjs build
   const { topics } = await getTopics(); // { topics: [] }
   return (
     <>
