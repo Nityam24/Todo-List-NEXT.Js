@@ -17,30 +17,42 @@ const getTopics = async () => {
 };
 
 async function TopicList() {
-  if (typeof window !== "undefined") return null; //this most important line for nextjs build
-  const { topics } = await getTopics(); // { topics: [] }
-  return (
-    <>
-      {topics.map((t) => (
-        <div
-          className="p-4 border-size-300 my-3 flex justify-between gap-5 items-start"
-          key={t._id}
-        >
-          <div>
-            <h2 className="font-bold text-2xl">{t.title}</h2>
-            <div>{t.description}</div>
-          </div>
+  if (typeof window !== "undefined") return null;
 
-          <div className="flex gap-2">
-            <RemoveBtn id={t._id} />
-            <Link href={`/editTopic/${t._id}`}>
-              <HiPencilAlt size={24}></HiPencilAlt>
-            </Link>
+  try {
+    const { topics } = await getTopics();
+
+    if (!topics || !Array.isArray(topics)) {
+      console.error("Invalid 'topics' data structure:", topics);
+      return null; // or handle the error in some way
+    }
+
+    return (
+      <>
+        {topics.map((t) => (
+          <div
+            className="p-4 border-size-300 my-3 flex justify-between gap-5 items-start"
+            key={t._id}
+          >
+            <div>
+              <h2 className="font-bold text-2xl">{t.title}</h2>
+              <div>{t.description}</div>
+            </div>
+
+            <div className="flex gap-2">
+              <RemoveBtn id={t._id} />
+              <Link href={`/editTopic/${t._id}`}>
+                <HiPencilAlt size={24}></HiPencilAlt>
+              </Link>
+            </div>
           </div>
-        </div>
-      ))}
-    </>
-  );
+        ))}
+      </>
+    );
+  } catch (error) {
+    console.error("Error fetching topics:", error);
+    return null; // or handle the error in some way
+  }
 }
 
 export default TopicList;
